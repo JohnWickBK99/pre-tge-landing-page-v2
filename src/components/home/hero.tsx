@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Suspense, useEffect, useState } from "react";
+import { Meteors } from "../magicui/meteors";
 import Earth from "../ui/globe";
 import { LineShadowText } from "../ui/line-shadow-text";
 
@@ -56,6 +57,9 @@ export default function Hero() {
         <div className="absolute bottom-1/3 w-full translate-y-20 scale-x-[1.2] opacity-70 transition-all duration-1000 group-hover:translate-y-8 group-hover:opacity-100">
           <div className="from-primary/50 to-primary/0 absolute left-1/2 h-[256px] w-[60%] -translate-x-1/2 scale-[2.5] rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[512px] dark:opacity-100"></div>
           <div className="from-primary/30 to-primary/0 absolute left-1/2 h-[128px] w-[40%] -translate-x-1/2 scale-200 rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[256px] dark:opacity-100"></div>
+        </div>
+        <div className="absolute inset-0 overflow-hidden h-[500px] w-full">
+          <Meteors className="bg-white" />
         </div>
         <div className="container mx-auto px-4 py-24 sm:py-32 relative z-10 flex-1 flex flex-col">
           <div className="mx-auto max-w-4xl text-center flex-1 flex flex-col justify-center">
