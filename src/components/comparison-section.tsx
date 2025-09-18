@@ -2,8 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
+import { useTheme } from "next-themes";
+import { AuroraText } from "./magicui/aurora-text";
 
 export function ComparisonSection() {
+  const theme = useTheme();
+  const shadowColor = theme.resolvedTheme === "dark" ? "black" : "white";
+
   const comparisonData = [
     {
       feature: "Fee Structure",
@@ -74,8 +79,9 @@ export function ComparisonSection() {
         >
           Why choose{" "}
           <span className="bg-gradient-to-b from-foreground via-rose-200 to-primary bg-clip-text text-transparent">
-            pre-tge?
-          </span>
+            <AuroraText colors={["#ffccd3", "#e78a53"]}>Pre-TGE</AuroraText>
+          </span>{" "}
+          ?
         </motion.h2>
 
         <div className="mx-auto mt-12 max-w-6xl">

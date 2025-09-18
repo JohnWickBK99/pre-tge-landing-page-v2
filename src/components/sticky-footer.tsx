@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LineShadowText } from "./ui/line-shadow-text";
 
@@ -55,21 +56,38 @@ export function StickyFooter() {
             >
               <ul className="space-y-2">
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Home
+                  <Link href="/">Home</Link>
                 </li>
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Terms
+                  <Link
+                    href="https://seller.pretgemarket.xyz/terms"
+                    target="_blank"
+                  >
+                    Terms
+                  </Link>
                 </li>
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Privacy
+                  <Link
+                    href="https://seller.pretgemarket.xyz/privacy"
+                    target="_blank"
+                  >
+                    Privacy
+                  </Link>
                 </li>
               </ul>
               <ul className="space-y-2">
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Gitbook
+                  <Link
+                    href="https://pretgemarket.gitbook.io/pre-tge-market/"
+                    target="_blank"
+                  >
+                    Gitbook
+                  </Link>
                 </li>
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Twitter
+                  <Link href="https://x.com/pretgemarket" target="_blank">
+                    Twitter
+                  </Link>
                 </li>
                 <li className="hover:underline cursor-pointer transition-colors text-background">
                   Discord
@@ -77,13 +95,13 @@ export function StickyFooter() {
               </ul>
             </motion.div>
             <motion.h2
-              className="absolute bottom-0 left-0 translate-y-1/3 sm:text-[192px] text-[40px] font-bold select-none"
+              className="absolute bottom-4 left-0 translate-y-1/3 sm:text-[192px] text-[40px] font-bold select-none"
               style={{ color: "#121113" }}
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Pre
+              Pre-
               <LineShadowText className="italic" shadowColor={shadowColor}>
                 TGE
               </LineShadowText>

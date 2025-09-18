@@ -48,7 +48,7 @@ export default function Home() {
       <Hero />
 
       {/* Features Section */}
-      <div id="features">
+      <div id="features" className="px-4">
         <Features />
       </div>
 

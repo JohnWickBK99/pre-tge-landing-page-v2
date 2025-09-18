@@ -90,7 +90,7 @@ export default function Hero() {
                 id="main-title"
                 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
               >
-                Secure Pre
+                Secure Pre-
                 <LineShadowText className="italic" shadowColor={shadowColor}>
                   TGE
                 </LineShadowText>

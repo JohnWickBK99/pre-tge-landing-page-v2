@@ -53,15 +53,18 @@ export function Header({ onMobileNavClick }: HeaderProps) {
         }}
       >
         <a
-          className={`z-50 flex items-center justify-center gap-2 transition-all duration-300 ${
-            isScrolled ? "ml-4" : ""
-          }`}
+          className={`z-50 flex items-center justify-center gap-2 transition-all duration-300`}
           href="#"
         >
-          <div className="text-white rounded-full size-8 w-8 flex items-center justify-center bg-primary border border-primary/30">
-            <span className="text-white font-bold text-sm">P</span>
-          </div>
-          <span className="font-semibold text-foreground">pre-tge</span>
+          {/* <div className="text-white rounded-full size-8 w-8 flex items-center justify-center bg-primary border border-primary/30"> */}
+          {/* <span className="text-white font-bold text-sm">P</span> */}
+          {/* </div> */}
+          {/* <span className="font-semibold text-foreground">pre-tge</span> */}
+          <img
+            src="/logo/logo-white.svg"
+            alt="Logo"
+            className="h-full w-auto max-h-9"
+          />
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
@@ -121,12 +124,13 @@ export function Header({ onMobileNavClick }: HeaderProps) {
       </header>
 
       {/* Mobile Header */}
-      <header className="sticky top-4 z-[9999] mx-4 flex w-auto flex-row items-center justify-between rounded-full bg-background/80 backdrop-blur-sm border border-border/50 shadow-lg md:hidden px-4 py-3">
+      <header className="sticky top-4 z-[9999] mx-4 flex w-auto flex-row items-center justify-between rounded-full bg-background/80 backdrop-blur-sm border border-border/50 shadow-lg md:hidden px-4 py-3 pl-2">
         <a className="flex items-center justify-center gap-2" href="#">
-          <div className="text-white rounded-full size-7 w-7 flex items-center justify-center bg-primary border border-primary/30">
-            <span className="text-white font-bold text-xs">P</span>
-          </div>
-          <span className="font-semibold text-foreground text-sm">pre-tge</span>
+          <img
+            src="/logo/logo-white.svg"
+            alt="Logo"
+            className="h-full w-auto max-h-8"
+          />
         </a>
 
         <button
