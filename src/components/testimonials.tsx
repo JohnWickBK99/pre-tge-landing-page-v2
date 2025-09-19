@@ -151,7 +151,11 @@ export function TestimonialsSection() {
         </div>
 
         <div className="-mt-8 flex justify-center">
-          <Link href="https://x.com/compose/post" target="_blank">
+          <Link
+            // href="https://x.com/compose/post?text=Just%20sharing%20my%20take%20👇%0A%0A...(phần%20này%20dành%20cho%20user%20muốn%20nhập%20gì%20đó)%0A%0AJump%20in%20with%20my%20invite:%20[user_invite_link]%0A%0A%23PreTGEMarket%20%23Premarket%20@pretgemarket"
+            href="https://x.com/compose/post?text=Just%20sharing%20my%20take%20👇%0A%0A...%0A%0A%23PreTGEMarket%20%23Premarket%20@pretgemarket"
+            target="_blank"
+          >
             <button className="group relative inline-flex items-center gap-2 rounded-full border border-[#e78a53]/30 bg-black/50 px-6 py-3 text-sm font-medium text-white transition-all hover:border-[#e78a53]/60 hover:bg-[#e78a53]/10 active:scale-95">
               <div className="absolute inset-x-0 -top-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-[#e78a53]/40 to-transparent"></div>
               <div className="absolute inset-x-0 -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-[#e78a53]/40 to-transparent"></div>
