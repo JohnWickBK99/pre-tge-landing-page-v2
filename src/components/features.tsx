@@ -46,10 +46,10 @@ export default function Features() {
     }
   };
   const images = [
-    "https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png",
-    "https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png",
-    "https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png",
-    "https://i.ibb.co/BPzpZDn/ethereum-logo-png-seeklogo-527153.png",
+    "https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png", //BNB
+    "https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png", //Arbitrum
+    "https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png", //Solana
+    "https://i.ibb.co/BPzpZDn/ethereum-logo-png-seeklogo-527153.png", //Ethereum
     "https://s2.coinmarketcap.com/static/img/coins/128x128/27716.png",
     "https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png",
     "https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png",

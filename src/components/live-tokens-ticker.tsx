@@ -1,18 +1,8 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-
-interface Token {
-  symbol: string;
-  name: string;
-  price: string;
-  change: string;
-  isPositive: boolean;
-  chain: string;
-  tokenIcon: string;
-  chainIcon: string;
-}
 
 export function LiveTokensTicker() {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,6 +11,7 @@ export function LiveTokensTicker() {
   const startTimeRef = useRef<number>();
   const pausedTimeRef = useRef<number>(0);
   const lastProgressRef = useRef<number>(0); // Track last progress to prevent jerks
+  const [tokens, setTokens] = useState<any[]>([]);
 
   useEffect(() => {
     const element = scrollRef.current;
@@ -63,68 +54,19 @@ export function LiveTokensTicker() {
     };
   }, []);
 
-  const [tokens] = useState<Token[]>([
-    {
-      symbol: "AURA",
-      name: "Aura Protocol",
-      price: "$0.0245",
-      change: "+12.5%",
-      isPositive: true,
-      chain: "ETH",
-      tokenIcon: "/aura-token-logo-purple-gradient.jpg",
-      chainIcon: "/ethereum-logo-blue.jpg",
-    },
-    {
-      symbol: "NEXUS",
-      name: "Nexus Finance",
-      price: "$0.0089",
-      change: "+8.2%",
-      isPositive: true,
-      chain: "SOL",
-      tokenIcon: "/nexus-token-logo-green-gradient.jpg",
-      chainIcon: "/solana-logo-purple.jpg",
-    },
-    {
-      symbol: "FLUX",
-      name: "Flux Network",
-      price: "$0.0156",
-      change: "-3.1%",
-      isPositive: false,
-      chain: "BASE",
-      tokenIcon: "/flux-token-logo-blue-gradient.jpg",
-      chainIcon: "/base-logo-blue.jpg",
-    },
-    {
-      symbol: "ORBIT",
-      name: "Orbit Labs",
-      price: "$0.0334",
-      change: "+15.7%",
-      isPositive: true,
-      chain: "ARB",
-      tokenIcon: "/orbit-token-logo-orange-gradient.jpg",
-      chainIcon: "/arbitrum-logo-blue.jpg",
-    },
-    {
-      symbol: "PULSE",
-      name: "Pulse Protocol",
-      price: "$0.0078",
-      change: "+6.9%",
-      isPositive: true,
-      chain: "BNB",
-      tokenIcon: "/pulse-token-logo-red-gradient.jpg",
-      chainIcon: "/bnb-logo-yellow.jpg",
-    },
-    {
-      symbol: "WAVE",
-      name: "Wave Finance",
-      price: "$0.0123",
-      change: "+4.3%",
-      isPositive: true,
-      chain: "ETH",
-      tokenIcon: "/wave-token-logo-teal-gradient.jpg",
-      chainIcon: "/ethereum-logo-blue.jpg",
-    },
-  ]);
+  const getTokens = async () => {
+    try {
+      const response = await axios.get(`
+https://app.pretgemarket.xyz/api/v1/tokens?statuses=active&page=1&limit=50`);
+      setTokens(response.data.data);
+    } catch (error) {
+      console.log(error, "error in getTokens");
+    }
+  };
+
+  useEffect(() => {
+    getTokens();
+  }, []);
 
   return (
     <div className="w-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-b border-primary/20 backdrop-blur-sm mt-6">
@@ -143,7 +85,7 @@ export function LiveTokensTicker() {
 
         <div className="overflow-hidden">
           <div ref={scrollRef} className="flex gap-8">
-            {[...tokens, ...tokens].map((token, index) => (
+            {[...tokens].map((token, index) => (
               <div
                 key={`${token.symbol}-${index}`}
                 className="token-card flex items-center gap-3 min-w-fit bg-black/20 rounded-lg px-4 py-2 border border-white/10 hover:bg-black/30 transition-colors cursor-pointer"
@@ -153,24 +95,24 @@ export function LiveTokensTicker() {
                 <div className="flex items-center gap-3">
                   <div className="relative">
                     <img
-                      src={token.tokenIcon || "/placeholder.svg"}
-                      alt={`${token.symbol} logo`}
+                      src={token?.logo || "/placeholder.svg"}
+                      alt={`${token?.symbol} logo`}
                       className="w-8 h-8 rounded-full"
                     />
                     <img
-                      src={token.chainIcon || "/placeholder.svg"}
-                      alt={`${token.chain} network`}
+                      src={token?.networks?.logo || "/placeholder.svg"}
+                      alt={`${token?.networks?.name} network`}
                       className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full border border-black/50"
                     />
                   </div>
                   <span className="font-semibold text-white text-sm">
-                    {token.symbol}
+                    {token?.symbol}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs">
+                {/* <div className="flex items-center gap-2 text-xs">
                   <span className="text-gray-300">{token.price}</span>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
