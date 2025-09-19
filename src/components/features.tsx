@@ -213,7 +213,7 @@ export default function Features() {
                           "Seamless interaction",
                           "Scalable",
                         ]}
-                        className="text-foreground text-3xl sm:text-5xl pb-10"
+                        className="text-foreground text-3xl sm:text-4xl pb-10"
                       />
                     </div>
 
