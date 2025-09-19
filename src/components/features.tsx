@@ -12,6 +12,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { AnimatedList } from "./magicui/animated-list";
+import { MorphingText } from "./magicui/morphing-text";
 import { IconCloud } from "./ui/icon-cloud";
 
 export default function Features() {
@@ -90,7 +91,7 @@ export default function Features() {
             <div className="grid grid-cols-12 gap-4 justify-center">
               {/* Dual Platform */}
               <motion.div
-                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col overflow-hidden gap-2 rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6 xl:col-start-2"
+                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col overflow-hidden gap-2 rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6"
                 onMouseEnter={() => setIsCliHovering(true)}
                 onMouseLeave={() => setIsCliHovering(false)}
                 ref={ref}
@@ -122,7 +123,7 @@ export default function Features() {
                     className="relative w-full h-[400px] rounded-xl overflow-hidden"
                     style={{ borderRadius: "20px" }}
                   >
-                    <div className="absolute inset-0 opacity-50">
+                    <div className="absolute inset-0 opacity-40">
                       <img
                         src="https://framerusercontent.com/images/UjqUIiBHmIcSH9vos9HlG2BF4bo.png"
                         alt="Dual Platform System"
@@ -130,7 +131,7 @@ export default function Features() {
                       />
                     </div>
 
-                    <motion.div
+                    {/* <motion.div
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ opacity: 0 }}
                       animate={isCliHovering ? { opacity: 1 } : { opacity: 0 }}
@@ -183,9 +184,9 @@ export default function Features() {
                           }}
                         />
                       </svg>
-                    </motion.div>
+                    </motion.div> */}
 
-                    <motion.div
+                    {/* <motion.div
                       className="absolute top-1/2 left-1/2 w-16 h-16 bg-purple-500 rounded-full blur-[74px] opacity-65 transform -translate-x-1/2 -translate-y-1/2"
                       initial={{ scale: 1 }}
                       animate={
@@ -199,13 +200,24 @@ export default function Features() {
                         repeat: isCliHovering ? Number.POSITIVE_INFINITY : 0,
                         repeatType: "loop",
                       }}
-                    />
+                    /> */}
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <AnimatedBeamDemo />
+                    <div className="flex items-center justify-center h-full">
+                      <MorphingText
+                        texts={[
+                          "Dual Platform",
+                          "Role-specific",
+                          "Multi-chain",
+                          "Personalized",
+                          "Optimized UX",
+                          "Seamless interaction",
+                          "Scalable",
+                        ]}
+                        className="text-white text-3xl sm:text-5xl pb-10"
+                      />
                     </div>
 
-                    <motion.div
+                    {/* <motion.div
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ opacity: 0 }}
                       animate={isCliHovering ? { opacity: 1 } : { opacity: 0 }}
@@ -241,14 +253,14 @@ export default function Features() {
                           }}
                         />
                       </svg>
-                    </motion.div>
+                    </motion.div> */}
                   </div>
                 </div>
               </motion.div>
 
               {/* Multi-Chain Support */}
               <motion.div
-                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col gap-2 overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6 xl:col-start-8"
+                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col gap-2 overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
                 ref={ref}
@@ -291,19 +303,7 @@ export default function Features() {
                   </h1>
                   <div className="absolute top-52 z-10 flex items-center justify-center">
                     <div className="w-[400px] h-[400px]">
-                      {/* <Suspense
-                        fallback={
-                          <div className="bg-secondary/20 h-[400px] w-[400px] animate-pulse rounded-full"></div>
-                        }
-                      >
-                        <Earth
-                          baseColor={baseColor}
-                          markerColor={[0, 0, 0]}
-                          glowColor={glowColor}
-                          dark={dark}
-                        />
-                      </Suspense> */}
-                      <IconCloud images={images} />
+                      <IconCloud images={images} size={32} />
                     </div>
                   </div>
                   <div className="absolute top-1/2 w-full translate-y-20 scale-x-[1.2] opacity-70 transition-all duration-1000 group-hover:translate-y-8 group-hover:opacity-100">
@@ -315,7 +315,7 @@ export default function Features() {
 
               {/* Smart Escrow */}
               <motion.div
-                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col gap-2 overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6 xl:col-start-2"
+                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col gap-2 overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6"
                 onMouseEnter={() => setIsFeature3Hovering(true)}
                 onMouseLeave={() => setIsFeature3Hovering(false)}
                 initial={{ opacity: 0, y: 50 }}
@@ -351,7 +351,7 @@ export default function Features() {
                     </div>
                   </div>
                 </div>
-                <div className="flex grow items-center justify-center select-none relative min-h-[300px] p-4">
+                {/* <div className="flex grow items-center justify-center select-none relative min-h-[300px] p-4">
                   <div className="w-full max-w-lg">
                     <div className="relative rounded-2xl border border-white/10 bg-black/20 dark:bg-white/5 backdrop-blur-sm">
                       <div className="p-4">
@@ -364,12 +364,6 @@ export default function Features() {
                               Active
                             </span>
                           </div>
-                          {/* <div className="flex items-center justify-between mb-4">
-                            <span className="text-white/70">Token Amount:</span>
-                            <span className="text-white font-medium">
-                              10,000 TKN
-                            </span>
-                          </div> */}
                           <div className="flex items-center justify-between">
                             <span className="text-white/70">Settlement:</span>
                             <span className="text-blue-400 font-medium">
@@ -438,12 +432,15 @@ export default function Features() {
                       </div>
                     </div>
                   </div>
+                </div> */}
+                <div className="flex items-center justify-center">
+                  <AnimatedBeamDemo />
                 </div>
               </motion.div>
 
               {/* Instant Settlement */}
               <motion.div
-                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6 xl:col-start-8"
+                className="group border-secondary/40 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-6 shadow-xl transition-all ease-in-out md:col-span-6 xl:col-span-6"
                 onMouseEnter={() => setIsFeature4Hovering(true)}
                 onMouseLeave={() => setIsFeature4Hovering(false)}
                 initial={{ opacity: 0, y: 50 }}
@@ -689,7 +686,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex w-24 items-center justify-center rounded-xl border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex items-center justify-center rounded-xl border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
     >
@@ -712,74 +709,94 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden p-4 !py-10 sm:p-6 lg:p-10"
+      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden p-4 !py-16 sm:p-6 lg:p-10"
       ref={containerRef}
     >
       <div className="flex size-full max-h-full max-w-lg flex-col items-stretch justify-between gap-10 text-2xs sm:!text-xs text-center text-background">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div1Ref} className="whitespace-nowrap">
-            Dual-platform
+            <div>
+              Buyer
+              <br />
+              <span className="text-xs">Deposit USDC</span>
+            </div>
           </Circle>
-          <Circle ref={div5Ref} className="whitespace-nowrap">
-            Role-specific
+          <Circle ref={div4Ref} className="whitespace-nowrap">
+            <div>
+              Seller
+              <br />
+              <span className="text-xs">Receive USDC</span>
+            </div>
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref}>Personalized</Circle>
+          {/* <Circle ref={div2Ref}>Personalized</Circle> */}
+          <div></div>
           <Circle
-            ref={div4Ref}
+            ref={div3Ref}
             className="size-12 sm:size-16 rounded-full p-0 relative"
           >
             <Image src="/logo/logo.png" alt="Logo" fill />
           </Circle>
-          <Circle ref={div6Ref}>Optimized UX</Circle>
+          <div></div>
+          {/* <Circle ref={div6Ref}>Optimized UX</Circle> */}
         </div>
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref}>Seamless interaction</Circle>
-          <Circle ref={div7Ref}>Scalable</Circle>
+          <Circle ref={div2Ref}>
+            <div>
+              Seller
+              <br />
+              <span className="text-xs">Deposit USDC</span>
+            </div>
+          </Circle>
+          <Circle ref={div5Ref}>
+            <div>
+              Buyer
+              <br />
+              <span className="text-xs">Receive tokens</span>
+            </div>
+          </Circle>
         </div>
       </div>
 
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
-        toRef={div4Ref}
+        toRef={div3Ref}
         curvature={-75}
         endYOffset={-10}
       />
-      <AnimatedBeam
+      {/* <AnimatedBeam
         containerRef={containerRef}
         fromRef={div2Ref}
         toRef={div4Ref}
-      />
+      /> */}
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div4Ref}
+        fromRef={div2Ref}
+        toRef={div3Ref}
         curvature={75}
         endYOffset={10}
       />
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div4Ref}
+        fromRef={div4Ref}
+        toRef={div3Ref}
         curvature={-75}
         endYOffset={-10}
-        reverse
       />
-      <AnimatedBeam
+      {/* <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div4Ref}
         reverse
-      />
+      /> */}
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={div7Ref}
-        toRef={div4Ref}
+        fromRef={div5Ref}
+        toRef={div3Ref}
         curvature={75}
         endYOffset={10}
-        reverse
       />
     </div>
   );
