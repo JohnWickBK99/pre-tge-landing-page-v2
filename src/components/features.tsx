@@ -440,12 +440,12 @@ export default function Features() {
                               Active
                             </span>
                           </div>
-                          <div className="flex items-center justify-between mb-4">
+                          {/* <div className="flex items-center justify-between mb-4">
                             <span className="text-white/70">Token Amount:</span>
                             <span className="text-white font-medium">
                               10,000 TKN
                             </span>
-                          </div>
+                          </div> */}
                           <div className="flex items-center justify-between">
                             <span className="text-white/70">Settlement:</span>
                             <span className="text-blue-400 font-medium">

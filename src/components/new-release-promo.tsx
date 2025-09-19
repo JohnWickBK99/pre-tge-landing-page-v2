@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ShimmerButton } from "./magicui/shimmer-button";
 
 export function NewReleasePromo() {
@@ -95,8 +96,12 @@ export function NewReleasePromo() {
                 </a>
               </div> */}
               <div className="flex items-center justify-center gap-2 mt-10">
-                <ShimmerButton>Buy Tokens</ShimmerButton>
-                <ShimmerButton>Sell Tokens</ShimmerButton>
+                <Link href="https://app.pretgemarket.xyz/" target="_blank">
+                  <ShimmerButton>Buy Tokens</ShimmerButton>
+                </Link>
+                <Link href="https://seller.pretgemarket.xyz/" target="_blank">
+                  <ShimmerButton>Sell Tokens</ShimmerButton>
+                </Link>
               </div>
             </div>
 

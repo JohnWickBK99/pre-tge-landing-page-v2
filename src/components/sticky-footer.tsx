@@ -90,7 +90,9 @@ export function StickyFooter() {
                   </Link>
                 </li>
                 <li className="hover:underline cursor-pointer transition-colors text-background">
-                  Discord
+                  <Link href="https://discord.gg/MpezUdVm" target="_blank">
+                    Discord
+                  </Link>
                 </li>
               </ul>
             </motion.div>
