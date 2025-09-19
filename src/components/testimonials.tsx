@@ -4,59 +4,58 @@ const testimonials = [
   {
     name: "Arjun Mehta",
     username: "@arjdev",
-    body: "Pre-TGE platform has revolutionized how I trade tokens before official listing. The escrow protection gives me complete confidence in every transaction.",
+    body: "New in this app and honestly, this app is one of the smoothest I've used. Trades go through instantly, no weird delays. Super solid.",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Sara Lin",
     username: "@sara.codes",
-    body: "The AI assistant's pre-TGE analysis is incredibly accurate. I've made better investment decisions with their token insights and market research.",
+    body: "UI is clean and straight to the point. No overcomplication - just connect your wallet and you're good to ape in.",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Devon Carter",
     username: "@devninja",
-    body: "Trading fees are unbelievably low at 0.5-1%. I've saved thousands compared to traditional OTC platforms. The multi-chain support is a game changer.",
+    body: "I've tried plenty of Pre-market apps, but the speed here is insane. Feels like transactions settle before I even blink.",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Priya Shah",
     username: "@priyacodes",
-    body: "The dual platform system is perfect - separate interfaces for buyers and sellers. The 1-click buy feature makes trading so seamless.",
+    body: "The built-in AI feels like having a degen buddy who actually knows what they're talking about. Super helpful with market insights.",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Leo Martin",
     username: "@leobuilds",
-    body: "Smart escrow contracts eliminated all my trust issues. Every transaction is automated and secure. No more worrying about getting scammed.",
+    body: "Multi-chain wallet support is a game-changer. Don't need to juggle a million tabs anymore - everything's right here.",
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Chloe Winters",
     username: "@chloewinters",
-    body: "The instant settlement feature is incredible. I can trade tokens and have them in my wallet within seconds. Perfect for quick market moves.",
+    body: "App runs buttery smooth. No lag, no bugs, just clean trading. Exactly what you need in this space.",
     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Ayaan Malik",
     username: "@ayaan_dev",
-    body: "As a crypto investor, pre-TGE trading has opened up so many opportunities I missed before. The platform makes early token access so easy.",
+    body: "The AI analysis actually surprised me. It breaks down tokens and market moves in a way that's both simple and on point.",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Monica Reeves",
     username: "@monicareeves",
-    body: "The portfolio management tools are fantastic. I can track all my pre-TGE positions and analyze performance across different chains easily.",
+    body: "Love how fluid everything feels. Connect, trade, done. No friction, no wasted time.",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "James Roy",
     username: "@jamesrdev",
-    body: "Pre-TGE platform is a lifesaver for finding hidden gems before they hit major exchanges. The AI analysis helps me spot winners early.",
+    body: "Minimal design but powerful under the hood. Easy enough for new users but sharp enough for vets.",
     img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
   },
 ];
-
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);

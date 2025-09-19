@@ -202,91 +202,6 @@ export default function Features() {
                     />
 
                     <div className="absolute inset-0 flex items-center justify-center">
-                      {/* <div className="flex items-center gap-8">
-                        <div className="flex flex-col gap-3">
-                          {["1-Click Buy", "Portfolio", "Analytics"].map(
-                            (item, index) => (
-                              <motion.div
-                                key={`left-${index}`}
-                                className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
-                                initial={{ opacity: 1, x: 0 }}
-                                animate={
-                                  isCliHovering ? { x: [-20, 0] } : { x: 0 }
-                                }
-                                transition={{
-                                  duration: 0.5,
-                                  delay: index * 0.1,
-                                }}
-                                whileHover={{ scale: 1.05 }}
-                              >
-                                <div className="w-4 h-4 flex items-center justify-center">
-                                  {index === 0 && (
-                                    <span className="text-xs">🛒</span>
-                                  )}
-                                  {index === 1 && (
-                                    <span className="text-xs">📊</span>
-                                  )}
-                                  {index === 2 && (
-                                    <span className="text-xs">📈</span>
-                                  )}
-                                </div>
-                                {item}
-                              </motion.div>
-                            )
-                          )}
-                        </div>
-
-                        <motion.div
-                          className="w-16 h-16 border border-gray-300 rounded-lg overflow-hidden shadow-lg bg-primary flex items-center justify-center"
-                          initial={{ opacity: 1, scale: 1 }}
-                          animate={
-                            isCliHovering
-                              ? { scale: [1, 1.1, 1] }
-                              : { scale: 1 }
-                          }
-                          transition={{ duration: 0.6, ease: "easeOut" }}
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                        >
-                          <span className="text-white font-bold text-xl">
-                            P
-                          </span>
-                        </motion.div>
-
-                        <div className="flex flex-col gap-3">
-                          {[
-                            "Dynamic Collateral",
-                            "Dynamic Settle Time",
-                            "Settlement",
-                          ].map((item, index) => (
-                            <motion.div
-                              key={`right-${index}`}
-                              className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
-                              initial={{ opacity: 1, x: 0 }}
-                              animate={
-                                isCliHovering ? { x: [20, 0] } : { x: 0 }
-                              }
-                              transition={{
-                                duration: 0.5,
-                                delay: index * 0.1,
-                              }}
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              <div className="w-4 h-4 flex items-center justify-center">
-                                {index === 0 && (
-                                  <span className="text-xs">🏪</span>
-                                )}
-                                {index === 1 && (
-                                  <span className="text-xs">🔒</span>
-                                )}
-                                {index === 2 && (
-                                  <span className="text-xs">⚡</span>
-                                )}
-                              </div>
-                              {item}
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div> */}
                       <AnimatedBeamDemo />
                     </div>
 
@@ -355,7 +270,7 @@ export default function Features() {
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      Trade tokens across multiple blockchain networks
+                      Multi-chain, multi-wallet — one app for every token.
                     </p>
                   </div>
                 </div>
@@ -420,11 +335,20 @@ export default function Features() {
                     Smart Escrow Contracts
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
-                    <p className="max-w-[460px]">
-                      Automated escrow smart contracts ensure secure
-                      transactions with instant settlement and dispute
-                      resolution.
-                    </p>
+                    <div className="">
+                      Smart escrow contracts enable{" "}
+                      <span className="font-semibold text-foreground">
+                        secure
+                      </span>
+                      ,{" "}
+                      <span className="font-semibold text-foreground">
+                        instant
+                      </span>
+                      , and{" "}
+                      <span className="font-semibold text-foreground">
+                        dispute-free transactions.
+                      </span>{" "}
+                    </div>
                   </div>
                 </div>
                 <div className="flex grow items-center justify-center select-none relative min-h-[300px] p-4">
@@ -540,11 +464,13 @@ export default function Features() {
                     Pre-TGE AI Assistant
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
-                    <p className="max-w-[460px]">
-                      Advanced AI assistant providing comprehensive pre-TGE
-                      analysis, token insights, market research, and investment
-                      guidance for informed decision-making.
-                    </p>
+                    <div className="max-w-[460px]">
+                      <span className="font-semibold text-foreground">
+                        AI assistant
+                      </span>{" "}
+                      delivering pre-TGE analysis, token insights, market
+                      research, and investment guidance for smarter decisions.
+                    </div>
                   </div>
                 </div>
                 <div className="flex grow items-center justify-center select-none relative min-h-[300px] p-4">
@@ -786,24 +712,31 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden p-4 sm:p-6 lg:p-10"
+      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden p-4 !py-10 sm:p-6 lg:p-10"
       ref={containerRef}
     >
-      <div className="flex size-full max-h-full max-w-lg flex-col items-stretch justify-between gap-10 text-xs text-center text-background">
+      <div className="flex size-full max-h-full max-w-lg flex-col items-stretch justify-between gap-10 text-2xs sm:!text-xs text-center text-background">
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}>Data Analytics</Circle>
-          <Circle ref={div5Ref}>Data Processing</Circle>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref}>Settle Time Options</Circle>
-          <Circle ref={div4Ref} className="size-16 rounded-full p-0">
-            <Image src="/logo/logo.png" alt="Logo" width={64} height={64} />
+          <Circle ref={div1Ref} className="whitespace-nowrap">
+            Dual-platform
           </Circle>
-          <Circle ref={div6Ref}>Dynamic Collateral</Circle>
+          <Circle ref={div5Ref} className="whitespace-nowrap">
+            Role-specific
+          </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref}>LLM</Circle>
-          <Circle ref={div7Ref}>Escrow Smart Contracts</Circle>
+          <Circle ref={div2Ref}>Personalized</Circle>
+          <Circle
+            ref={div4Ref}
+            className="size-12 sm:size-16 rounded-full p-0 relative"
+          >
+            <Image src="/logo/logo.png" alt="Logo" fill />
+          </Circle>
+          <Circle ref={div6Ref}>Optimized UX</Circle>
+        </div>
+        <div className="flex flex-row items-center justify-between">
+          <Circle ref={div3Ref}>Seamless interaction</Circle>
+          <Circle ref={div7Ref}>Scalable</Circle>
         </div>
       </div>
 
