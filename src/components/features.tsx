@@ -718,14 +718,14 @@ export function AnimatedBeamDemo() {
             <div>
               Buyer
               <br />
-              <span className="text-xs">Deposit USDC</span>
+              <span className="text-xs">Deposit Collateral</span>
             </div>
           </Circle>
           <Circle ref={div4Ref} className="whitespace-nowrap">
             <div>
               Seller
               <br />
-              <span className="text-xs">Receive USDC</span>
+              <span className="text-xs">Receive Collateral</span>
             </div>
           </Circle>
         </div>
@@ -746,7 +746,7 @@ export function AnimatedBeamDemo() {
             <div>
               Seller
               <br />
-              <span className="text-xs">Deposit USDC</span>
+              <span className="text-xs">Deposit Collateral</span>
             </div>
           </Circle>
           <Circle ref={div5Ref}>
