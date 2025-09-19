@@ -75,7 +75,8 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm"
               >
                 <Sparkles className="h-4 w-4" />
-                Next-Generation Trading
+                {/* Next-Generation Trading */}
+                Rank #1 Pre-Market Platform
               </Badge>
             </motion.div>
 

@@ -108,7 +108,7 @@ export default function Features() {
                 style={{ transition: "all 0s ease-in-out" }}
               >
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl leading-none font-semibold tracking-tight">
+                  <h3 className="text-2xl leading-none font-semibold tracking-tight text-foreground">
                     Dual Platform System
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
@@ -213,7 +213,7 @@ export default function Features() {
                           "Seamless interaction",
                           "Scalable",
                         ]}
-                        className="text-white text-3xl sm:text-5xl pb-10"
+                        className="text-foreground text-3xl sm:text-5xl pb-10"
                       />
                     </div>
 
@@ -277,7 +277,7 @@ export default function Features() {
                 style={{ transition: "all 0s ease-in-out" }}
               >
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl leading-none font-semibold tracking-tight">
+                  <h3 className="text-2xl leading-none font-semibold tracking-tight text-foreground">
                     Multi-Chain Support
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
@@ -331,7 +331,7 @@ export default function Features() {
                 style={{ transition: "all 0s ease-in-out" }}
               >
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl leading-none font-semibold tracking-tight">
+                  <h3 className="text-2xl leading-none font-semibold tracking-tight text-foreground">
                     Smart Escrow Contracts
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
@@ -457,7 +457,7 @@ export default function Features() {
                 style={{ transition: "all 0s ease-in-out" }}
               >
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl leading-none font-semibold tracking-tight">
+                  <h3 className="text-2xl leading-none font-semibold tracking-tight text-foreground">
                     Pre-TGE AI Assistant
                   </h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
