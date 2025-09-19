@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ShinyButton } from "./magicui/shiny-button";
 
@@ -114,15 +115,13 @@ export function Header({ onMobileNavClick }: HeaderProps) {
           >
             Buyer Platform
           </a> */}
-          <ShinyButton className="p-0">
-            <a
-              target="_blank"
-              href="https://app.pretgemarket.xyz/"
-              className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm normal-case"
-            >
-              Launch Pre-TGE
-            </a>
-          </ShinyButton>
+          <Link href="https://app.pretgemarket.xyz/" target="_blank">
+            <ShinyButton className="p-0">
+              <span className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm normal-case">
+                Launch Pre-TGE
+              </span>
+            </ShinyButton>
+          </Link>
         </div>
       </header>
 
