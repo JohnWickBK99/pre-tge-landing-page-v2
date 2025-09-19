@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import type React from "react";
 import "./globals.css";
 
@@ -195,9 +196,140 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "PreTGE Marketplace",
+    description:
+      "Leading secure marketplace for Pre-TGE token trading with escrow protection",
+    url: "https://pretgemarket.xyz",
+    logo: {
+      "@type": "ImageObject",
+      url: `"https://pretgemarket.xyz/images/pre-tge-logo.png`,
+      width: 512,
+      height: 512,
+    },
+    sameAs: ["https://x.com/PreTGEMarket"],
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${"https://pretgemarket.xyz"}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "PreTGE Marketplace Ltd",
+      logo: {
+        "@type": "ImageObject",
+        url: `${"https://pretgemarket.xyz"}/logo/pre-tge-logo.png`,
+      },
+    },
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    name: "PreTGE Marketplace",
+    description:
+      "Secure marketplace for Pre-TGE token trading with escrow protection",
+    url: "https://pretgemarket.xyz",
+    logo: `${"https://pretgemarket.xyz"}/logo/pre-tge-logo.png`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-555-PreTGE",
+      contactType: "Customer Service",
+      email: "support@pretgemarket.xyz",
+      availableLanguage: ["English"],
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "Global",
+      addressRegion: "Worldwide",
+    },
+    foundingDate: "2024",
+    numberOfEmployees: "10-50",
+    serviceType: "Cryptocurrency Trading Platform",
+  };
   return (
     <html lang="en" className={`dark ${suisseIntl.variable}`}>
-      <body className="dark font-sans">{children}</body>
+      <head>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta
+          httpEquiv="Referrer-Policy"
+          content="strict-origin-when-cross-origin"
+        />
+      </head>
+      <body className="dark font-sans">
+        <main>{children}</main>
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                  page_title: document.title,
+                  page_location: window.location.href,
+                });
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* Schema.org for better SEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://pretgemarket.xyz",
+              },
+            ],
+          })}
+        </script>
+      </body>
     </html>
   );
 }
