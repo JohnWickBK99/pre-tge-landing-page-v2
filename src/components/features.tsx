@@ -568,7 +568,7 @@ export default function Features() {
                               </div>
                               <div className="bg-white/10 rounded-lg p-3 max-w-[80%]">
                                 <p className="text-white text-sm">
-                                  📊 <strong>Token Analysis:</strong>
+                                  <strong>Token Analysis:</strong>
                                   <br />• Market Cap: $2.5M
                                   <br />• Risk Score: Medium
                                   <br />• Growth Potential: High
@@ -595,7 +595,7 @@ export default function Features() {
                               </div>
                               <div className="bg-white/10 rounded-lg p-3 max-w-[80%]">
                                 <p className="text-white text-sm">
-                                  🔍 <strong>Tokenomics Analysis:</strong>
+                                  <strong>Tokenomics Analysis:</strong>
                                   <br />• Total Supply: 100M
                                   <br />• Team Allocation: 15%
                                   <br />• Vesting: 24 months
