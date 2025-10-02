@@ -9,7 +9,6 @@ import { geist } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { AnimatedList } from "./magicui/animated-list";
 import { MorphingText } from "./magicui/morphing-text";
@@ -736,7 +735,11 @@ export function AnimatedBeamDemo() {
             ref={div3Ref}
             className="size-12 sm:size-16 rounded-full p-0 relative"
           >
-            <Image src="/logo/logo.png" alt="Logo" fill />
+            <img
+              src="/logo/pre-tge-bl-sm.png"
+              alt="Logo"
+              className="w-4/5 h-auto"
+            />
           </Circle>
           <div></div>
           {/* <Circle ref={div6Ref}>Optimized UX</Circle> */}
