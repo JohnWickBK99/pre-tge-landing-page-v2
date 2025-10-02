@@ -184,7 +184,7 @@ export default function RootLayout({
     url: "https://pretgemarket.xyz",
     logo: {
       "@type": "ImageObject",
-      url: `"https://pretgemarket.xyz/images/pre-tge-logo.png`,
+      url: `"https://pretgemarket.xyz/logo/pre-tge-w.svg`,
       width: 512,
       height: 512,
     },
@@ -202,7 +202,7 @@ export default function RootLayout({
       name: "PreTGE Marketplace Ltd",
       logo: {
         "@type": "ImageObject",
-        url: `${"https://pretgemarket.xyz"}/logo/pre-tge-logo.png`,
+        url: `${"https://pretgemarket.xyz"}/logo/pre-tge-w.svg`,
       },
     },
   };
@@ -214,7 +214,7 @@ export default function RootLayout({
     description:
       "Secure marketplace for Pre-TGE token trading with escrow protection",
     url: "https://pretgemarket.xyz",
-    logo: `${"https://pretgemarket.xyz"}/logo/pre-tge-logo.png`,
+    logo: `${"https://pretgemarket.xyz"}/logo/pre-tge-w.svg`,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+1-555-PreTGE",
