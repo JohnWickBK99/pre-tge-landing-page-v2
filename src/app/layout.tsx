@@ -122,7 +122,7 @@ export const metadata: Metadata = {
         type: "image/png",
       },
       {
-        url: "/logo/pre-tge-logo.png",
+        url: "/logo/pre-tge-w.svg",
         width: 512,
         height: 512,
         alt: "PreTGE Marketplace Logo",
