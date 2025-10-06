@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import Hero from "@/components/home/hero";
 import { LiveTokensTicker } from "@/components/live-tokens-ticker";
 import { NewReleasePromo } from "@/components/new-release-promo";
+import News from "@/components/news";
 import { StickyFooter } from "@/components/sticky-footer";
 import { TestimonialsSection } from "@/components/testimonials";
 import { useEffect } from "react";
@@ -46,6 +47,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
+
+      <div id="new" className="px-4">
+        <News />
+      </div>
 
       {/* Features Section */}
       <div id="features" className="px-4">
